@@ -5,10 +5,11 @@ from matplotlib import pyplot as plt
 def displays(file_name: str):
     plt.style.use('seaborn')
     lt = logTable()
-    lt.load_from_json(file_name)
+    if not lt.load_from_json(file_name):
+        print("hi")
 
-    x = lt.lat
-    y = lt.lon
+    x = lt.latitudes
+    y = lt.longitudes
 
     plt.scatter(x, y)
     plt.xlabel('Latitude')
@@ -17,5 +18,5 @@ def displays(file_name: str):
 
 
 if __name__ == '__main__':
-    displays("7500(12_25_55)-VehicleGPSLog.json")
-    displays("7500(12_25_55)-CognataEngineLog.json")
+    displays("CognataEngineLog_close.json")
+    displays("CognataEngineLog_far.json")
