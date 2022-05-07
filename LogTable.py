@@ -9,6 +9,7 @@ class logTable:
         self.log = []
         self.latitudes = []
         self.longitudes = []
+        self.simulation_time = []
 
     def load_from_json(self, file_name: str) -> bool:
         flag = True
@@ -17,6 +18,7 @@ class logTable:
                 logs = []
                 longitudes = []
                 latitudes = []
+                simulation_times = []
                 lst = json.load(f)
 
                 for v in lst["Logs"]:
@@ -36,11 +38,13 @@ class logTable:
                                        v["TargetDistance"])
                             longitudes.append(v["Longitude"])
                             latitudes.append(v["Latitude"])
+                            simulation_times.append(v["SimulationTime"])
                             logs.append(gpss)
 
                 self.log = logs
                 self.latitudes = latitudes
                 self.longitudes = longitudes
+                self.simulation_time = simulation_times
         except FileNotFoundError:
             flag = False
             raise FileNotFoundError
