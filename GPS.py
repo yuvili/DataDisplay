@@ -30,6 +30,7 @@ class gps:
     # "RoadSpeedLimit":40.2336006164551,
     # "HeadedTrafficLightDistance":10000,
     # "TargetDistance":10000}
+
     def __init__(self, t: str, world_time: str, simulation_time: float, frame_id: int, simulation_pos: Position,
                  noised_simulation_position: Position, latitude: float, longitude: float, altitude: float,
                  noised_latitude: float, noised_longitude: float, noised_altitude: float, orientation: Position,
