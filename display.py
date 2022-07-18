@@ -42,4 +42,4 @@ def displays(json_file_name_far: str, json_file_name_close: str):
     plt.show()
 
 
-displays("CognataEngineLog_far.json", "CognataEngineLog_close.json")
+displays("jsonFiles/CognataEngineLog_far.json", "jsonFiles/CognataEngineLog_close.json")
